@@ -1,2 +1,0 @@
-# Qr-personal
-Qr personal
