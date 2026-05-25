@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Tarjeta de Contacto</title>
+    <style>
+        body { 
+            display: flex; 
+            flex-direction: column;
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: #f0f2f5; 
+            margin: 0;
+        }
+        .card { 
+            background: white; 
+            padding: 30px; 
+            border-radius: 20px; 
+            display: flex; 
+            align-items: center; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .profile-img { 
+            width: 80px; 
+            height: 80px; 
+            border-radius: 50%; 
+            margin-right: 20px; 
+            object-fit: cover;
+            border: 3px solid #007bff;
+        }
+        .info { font-size: 1.5rem; font-weight: bold; color: #333; }
+        a { text-decoration: none; color: #007bff; transition: color 0.3s; }
+        a:hover { color: #0056b3; }
+        #qrcode { background: white; padding: 10px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <!-- Reemplaza 'perfil.jpg' por el nombre de tu archivo de imagen -->
+        <img src="perfil.jpg" alt="Perfil" class="profile-img" onerror="this.style.display='none'">
+        <div class="info">
+            <a href="tel:1158991056">11 5899-1056</a>
+        </div>
+    </div>
+
+    <h3>Escanea para guardar el contacto</h3>
+    <div id="qrcode"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+        // Cambia "https://tupagina.com" por la dirección web que vas a usar
+        new QRCode(document.getElementById("qrcode"), {
+            text: "https://tupagina.com", 
+            width: 156,
+            height: 156,
+            colorDark : "#000000",
+            colorLight : "#ffffff",
+            correctLevel : QRCode.CorrectLevel.H
+        });
+    </script>
+</body>
+</html>
